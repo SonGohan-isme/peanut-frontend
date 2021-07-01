@@ -1,0 +1,30 @@
+.mat-typography{
+    width: 1500px;
+    height: 500px;
+}
+
+.card-header{
+    text-align: center;
+}
+
+.col-12{
+    max-width: 100%;
+}
+
+.col-lg-6{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  table{
+      height: 350px;
+  }
+
+.btn-primary {
+    margin-top: 2rem;
+}

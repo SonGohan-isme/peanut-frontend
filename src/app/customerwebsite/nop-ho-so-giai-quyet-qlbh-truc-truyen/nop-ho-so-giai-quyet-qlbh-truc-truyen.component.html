@@ -1,0 +1,50 @@
+<mat-dialog-content class="mat-typography">
+    <div class="card-header">
+        <h2><b>Nộp hồ sơ yêu cầu giải quyết quyền lợi bảo hiểm</b></h2>
+    </div>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="policyNo">Mã số hợp đồng</label>
+                <input type="text" id="policyNo" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="policyHolder">Bên mua bảo hiểm</label>
+                <input type="name" id="policyHolder" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="idNo">Số giấy tờ tùy thân</label>
+                <input type="number" id="idNo" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNo">Số điện thoại</label>
+                <input type="number" id="phoneNo" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="beneficiary">Người thụ hưởng</label>
+                <input type="name" id="beneficiary" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="policyType">Hạng mục yêu cầu thanh toán</label>
+                <select class="form-control" id="policyType" required>
+                    <option>Quyền lợi trong trường hợp tử vong</option>
+                    <option>Quyền lợi trong trường hợp thương tật toàn bộ vĩnh viễn</option>
+                    <option>Quyền lợi trong trường hợp bệnh hiểm nghèo</option>
+                </select>
+            </div>
+
+            <div class="form-group mt-3">
+                <label class="mr-2">Tài liệu đính kèm:</label>
+                <input type="file" name="file" multiple>
+            </div>
+            <hr>
+
+            <button type="submit" class="btn btn-primary">Xác nhận</button>
+        </form>
+    </div>
+</mat-dialog-content>
