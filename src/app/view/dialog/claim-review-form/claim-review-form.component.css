@@ -28,3 +28,10 @@ table, th, td {
 .btn-primary {
     margin-top: 2rem;
 }
+
+.form-control1 {
+    width: 535px;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
