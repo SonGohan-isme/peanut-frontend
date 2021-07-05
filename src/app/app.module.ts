@@ -8,7 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartsModule } from 'ng2-charts';
 import { DataTablesModule } from 'angular-datatables';
-import { NgxSpinnerModule } from 'ngx-spinner'
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // material
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -61,8 +62,8 @@ import { IllustrationTableComponent } from '././view/illustration/illustration-t
 import { ContractTableComponent } from '././view/contract/contract-table/contract-table.component';
 import { CreateIllustrationComponent } from './view/illustration/illustration-table/list-illustration/detail-illustration/create-illustration/create-illustration.component';
 import { DetailIllustrationComponent } from './view/illustration/illustration-table/list-illustration/detail-illustration/detail-illustration.component';
-import {AdminAddEmployeeInfoComponent} from '././view/dialog/admin-add-employee-info/admin-add-employee-info.component';
-import {AdminAddAccountEmployeeComponent} from '././view/dialog/admin-add-account-employee/admin-add-account-employee.component';
+import { AdminAddEmployeeInfoComponent } from '././view/dialog/admin-add-employee-info/admin-add-employee-info.component';
+import { AdminAddAccountEmployeeComponent } from '././view/dialog/admin-add-account-employee/admin-add-account-employee.component';
 import { ListIllustrationComponent } from '././view/illustration/illustration-table/list-illustration/list-illustration.component';
 import { AddCustomerIllustrationDialogComponent } from './view/dialog/add-customer-illustration-dialog/add-customer-illustration-dialog.component';
 import { CustomerAddInfoDialogComponent } from './view/dialog/customer-add-info-dialog/customer-add-info-dialog.component';
@@ -107,7 +108,7 @@ import { HoTroKhachHangComponent } from './customerwebsite/ho-tro-khach-hang/ho-
 import { HuongdanGqqlbhComponent } from './customerwebsite/huongdan-gqqlbh/huongdan-gqqlbh.component';
 import { NopHoSoGiaiQuyetQlbhTrucTruyenComponent } from './customerwebsite/nop-ho-so-giai-quyet-qlbh-truc-truyen/nop-ho-so-giai-quyet-qlbh-truc-truyen.component';
 import { ChamSocKhachHangComponent } from './customerwebsite/cham-soc-khach-hang/cham-soc-khach-hang.component';
-
+import { GetContactInfoComponent } from './customerwebsite/get-contact-info/get-contact-info.component';
 
 
 @NgModule({
@@ -194,6 +195,7 @@ import { ChamSocKhachHangComponent } from './customerwebsite/cham-soc-khach-hang
     HuongdanGqqlbhComponent,
     NopHoSoGiaiQuyetQlbhTrucTruyenComponent,
     ChamSocKhachHangComponent,
+    GetContactInfoComponent
   ],
   imports: [
     DataTablesModule,
@@ -222,8 +224,9 @@ import { ChamSocKhachHangComponent } from './customerwebsite/cham-soc-khach-hang
     Ng2SearchPipeModule,
     Ng2OrderModule
   ],
-  entryComponents: [AdminResetPasswordComponent,AppraiserReviewFormComponent,EmployeeEditInfoDialogComponent,ContractPauseDialogComponent,ContractChangeInfoDialogComponent,ReportCustomerDialogComponent,CustomerEditInfoComponent,AdminAddEmployeeInfoComponent,AdminAddAccountEmployeeComponent,AddCustomerIllustrationDialogComponent,CustomerAddInfoDialogComponent,ContractAddDialogComponent,NotificationConfirmDialogComponent,PauseCustomerDialogComponent],
+  entryComponents: [AdminResetPasswordComponent, AppraiserReviewFormComponent, EmployeeEditInfoDialogComponent, ContractPauseDialogComponent, ContractChangeInfoDialogComponent, ReportCustomerDialogComponent, CustomerEditInfoComponent, AdminAddEmployeeInfoComponent, AdminAddAccountEmployeeComponent, AddCustomerIllustrationDialogComponent, CustomerAddInfoDialogComponent, ContractAddDialogComponent, NotificationConfirmDialogComponent, PauseCustomerDialogComponent],
   providers: [AdminDataServiceService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

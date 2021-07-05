@@ -20,6 +20,7 @@ import { RelatedPersonInfo } from 'src/app/model/RelatedPersonInfo';
 import { Benifit } from 'src/app/model/Benifit';
 import { RequestClaimApprove } from 'src/app/model/RequestClaimApprove';
 import { IllustrationMainBenifit } from 'src/app/model/IllustrationMainBenifit';
+import { TemplatePortal } from '@angular/cdk/portal';
 
 @Component({
   selector: 'app-claim-review-form',
@@ -27,6 +28,22 @@ import { IllustrationMainBenifit } from 'src/app/model/IllustrationMainBenifit';
   styleUrls: ['./claim-review-form.component.css']
 })
 export class ClaimReviewFormComponent implements OnInit {
+
+  // onItemChange(value) {
+  //   var total = 0;
+  //   total = total + parseInt(value);
+  //   // value += value;
+  //   console.log(" Total is : ", total);
+  //   // console.log(" Value is : ", value);
+  // }
+
+  // onItemChange2(value) {
+  //   var total = 0;
+  //   total = total + parseInt(value);
+  //   // value += value;
+  //   console.log(" Total2 is : ", total);
+  //   // console.log(" Value is : ", value);
+  // }
 
   contract: Contract;
   illustrationCopy: Illustration;
@@ -50,6 +67,9 @@ export class ClaimReviewFormComponent implements OnInit {
   dateNow: Date;
   ids: number[];
   mainBenefit: IllustrationMainBenifit;
+  value1 = 0;
+  value2 = 0;
+  // total: number;
 
   constructor(@Inject(MAT_DIALOG_DATA)
   public req: Request, public contractService: ContractService, private revenueSer: RevenueService,
@@ -64,7 +84,6 @@ export class ClaimReviewFormComponent implements OnInit {
 
     this.contractService.getDetailContractForCustomer(this.req.id_contract).subscribe((data => {
       this.contract = data;
-
 
       this.illustSer.getAllSubBenefitById(this.contract.id_illustration).subscribe((data => {
         for (var i = 0; i < data.length; i++) {
@@ -92,21 +111,15 @@ export class ClaimReviewFormComponent implements OnInit {
         this.listSub = data;
       }))
 
-
-
       this.illustSer.getAllMainBenefitScaleByMainBenefitId(this.contract.id_main_benifit).subscribe((data => {
         this.listMainBenefitScale = data;
       }))
 
     }))
-
-
-
-
-
   }
 
   Review() {
+
     this.spinner.show();
     this.requestClaim = new RequestClaimApprove(0, this.req.name, this.dateNow, this.req.code_sender,
       this.description, this.amountMoney, this.req.id_contract, this.approveStatus, this.priority);
@@ -126,5 +139,15 @@ export class ClaimReviewFormComponent implements OnInit {
         this.router.navigate(['claim-request-manage']);
       }))
     }
+  }
+
+  handleChange1(value) {
+    this.value1 = value;
+    this.amountMoney = this.value2 + this.value1;
+  }
+
+  handleChange2(value) {
+    this.value2 = value;
+    this.amountMoney = this.value2 + this.value1;
   }
 }
